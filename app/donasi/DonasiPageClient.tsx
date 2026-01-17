@@ -167,7 +167,7 @@ export default function DonasiPageClient() {
           id: process.env.ID_QRIS,
           amount: finalAmount,
           useUniqueCode: true,
-          packageIds: ["id.dana"],
+          packageIds: ["com.gojek.gopaymerchant"],
         }),
       });
 
