@@ -263,15 +263,15 @@ export default function DonasiPageClient() {
   };
 
   return (
-    <main className="min-h-screen bg-black text-slate-100 overflow-hidden">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzMzMzMzMyIgb3BhY2l0eT0iMC4xIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')]" />
+    <main className="min-h-screen bg-white text-gray-900 overflow-hidden">
+      {/* Subtle background pattern - lebih terang untuk tema putih */}
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgNDAgMTAgTSAxMCAwIEwgMTAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2U1ZTdlYiIgb3BhY2l0eT0iMC4zIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')]" />
 
       <div className="relative mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="mb-10 flex items-center justify-between">
           <a
             href="/"
-            className="inline-flex items-center text-slate-400 hover:text-sky-400 transition"
+            className="inline-flex items-center text-gray-600 hover:text-sky-600 transition"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Kembali
@@ -280,14 +280,14 @@ export default function DonasiPageClient() {
 
         {loading ? (
           <div className="flex flex-col items-center justify-center py-20">
-            <Loader2 className="h-8 w-8 animate-spin text-sky-400" />
-            <p className="mt-3 text-slate-400 text-sm">Memuat informasi pembayaran...</p>
+            <Loader2 className="h-8 w-8 animate-spin text-sky-500" />
+            <p className="mt-3 text-gray-500 text-sm">Memuat informasi pembayaran...</p>
           </div>
         ) : !qrString ? (
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="overflow-hidden rounded-3xl bg-slate-900/30 backdrop-blur-sm border border-slate-800/50 shadow-xl"
+            className="overflow-hidden rounded-3xl bg-white border border-gray-200 shadow-lg"
           >
             {/* Background Image */}
             <div className="absolute inset-0 opacity-10">
@@ -297,8 +297,8 @@ export default function DonasiPageClient() {
 
             <div className="relative z-10 p-8">
               <div className="flex items-center space-x-3 mb-8">
-                <Heart className="h-7 w-7 text-slate-400" />
-                <h2 className="text-xl font-medium text-white">
+                <Heart className="h-7 w-7 text-gray-500" />
+                <h2 className="text-xl font-medium text-gray-900">
                   Pilih Nominal Donasi
                 </h2>
               </div>
@@ -315,8 +315,8 @@ export default function DonasiPageClient() {
                     }}
                     className={classNames(
                       amount === p && !customAmount
-                        ? "bg-gradient-to-r from-sky-600 to-indigo-600 text-white shadow-lg"
-                        : "bg-slate-800/50 text-slate-300 hover:bg-slate-800/70 border border-slate-700/50",
+                        ? "bg-gradient-to-r from-sky-500 to-indigo-500 text-white shadow-md"
+                        : "bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-300",
                       "w-full rounded-xl px-4 py-5 text-sm font-semibold transition-all"
                     )}
                   >
@@ -330,14 +330,14 @@ export default function DonasiPageClient() {
               </div>
 
               <div className="mt-8">
-                <label className="block text-sm font-medium text-slate-300 mb-3">Jumlah Custom</label>
+                <label className="block text-sm font-medium text-gray-700 mb-3">Jumlah Custom</label>
                 <input
                   type="number"
                   min={1000}
                   placeholder="Contoh: 75000"
                   value={customAmount}
                   onChange={(e) => setCustomAmount(e.target.value)}
-                  className="w-full rounded-xl border border-slate-700/50 bg-slate-800/50 px-5 py-4 text-slate-100 shadow-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-900/40 outline-none transition"
+                  className="w-full rounded-xl border border-gray-300 bg-white px-5 py-4 text-gray-900 shadow-sm focus:border-sky-500 focus:ring-2 focus:ring-sky-200 outline-none transition"
                 />
               </div>
 
@@ -346,7 +346,7 @@ export default function DonasiPageClient() {
                 whileTap={{ scale: 0.98 }}
                 onClick={handleGenerate}
                 disabled={loading || !finalAmount}
-                className="mt-10 inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 px-6 py-4 text-sm font-semibold text-white shadow-lg transition hover:opacity-90 disabled:opacity-60"
+                className="mt-10 inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-sky-500 to-indigo-500 px-6 py-4 text-sm font-semibold text-white shadow-md transition hover:opacity-90 disabled:opacity-60"
               >
                 {loading ? "Membuat QR..." : "Buat QRIS Sekarang"}
               </motion.button>
@@ -366,12 +366,12 @@ export default function DonasiPageClient() {
               status={status}
             />
 
-            <div className="flex items-center justify-between bg-slate-900/30 backdrop-blur-sm rounded-2xl px-6 py-4 border border-slate-800/50">
-              <div className="text-sm text-slate-300">
+            <div className="flex items-center justify-between bg-gray-50 rounded-2xl px-6 py-4 border border-gray-200">
+              <div className="text-sm text-gray-700">
                 Status:{" "}
                 <span className={classNames(
-                  status === "paid" ? "text-emerald-400" :
-                    status === "pending" ? "text-amber-400" : "text-rose-400",
+                  status === "paid" ? "text-emerald-600" :
+                    status === "pending" ? "text-amber-600" : "text-rose-600",
                   "font-semibold"
                 )}>
                   {status}
@@ -382,38 +382,13 @@ export default function DonasiPageClient() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={handleReset}
-                className="rounded-xl bg-slate-800/50 px-5 py-3 text-sm font-medium text-slate-200 hover:bg-slate-800/70 border border-slate-700/50 transition"
+                className="rounded-xl bg-gray-100 px-5 py-3 text-sm font-medium text-gray-700 hover:bg-gray-200 border border-gray-300 transition"
               >
                 Buat QR Baru
               </motion.button>
             </div>
           </motion.div>
         )}
-
-        {/* Footer */}
-        <div className="mt-12 text-center text-xs text-slate-700">
-          <div className="flex flex-col sm:flex-row items-center justify-center space-y-1 sm:space-y-0 sm:space-x-2">
-            <span>Powered by</span>
-            <a
-              href="https://maelyn.my.id"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 font-medium hover:text-slate-600 transition"
-            >
-              Maelyn Group
-            </a>
-            <span className="hidden sm:inline text-slate-800">•</span>
-            <span>Payment Gateway by</span>
-            <a
-              href="https://cashify.my.id"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 font-medium hover:text-slate-600 transition"
-            >
-              Cashify
-            </a>
-          </div>
-        </div>
       </div>
     </main>
   );
