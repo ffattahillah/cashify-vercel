@@ -271,7 +271,7 @@ export default function DonasiPageClient() {
         <div className="mb-10 flex items-center justify-between">
           <a
             href="/"
-            className="inline-flex items-center text-gray-600 hover:text-sky-600 transition"
+            className="relative z-10 inline-flex items-center text-gray-600 hover:text-sky-600 transition"
           >
             <ArrowLeft className="mr-2 h-4 w-4" />
             Kembali
@@ -287,7 +287,7 @@ export default function DonasiPageClient() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="overflow-hidden rounded-3xl bg-white border border-gray-200 shadow-lg"
+            className="overflow-hidden rounded-3xl bg-white/80 backdrop-blur-sm border border-gray-200 shadow-lg"
           >
             {/* Background Image */}
             <div className="absolute inset-0 opacity-10">
@@ -297,7 +297,7 @@ export default function DonasiPageClient() {
 
             <div className="relative z-10 p-8">
               <div className="flex items-center space-x-3 mb-8">
-                <Heart className="h-7 w-7 text-gray-500" />
+                <Heart className="h-7 w-7 text-gray-600" />
                 <h2 className="text-xl font-medium text-gray-900">
                   Pilih Nominal Donasi
                 </h2>
@@ -315,7 +315,7 @@ export default function DonasiPageClient() {
                     }}
                     className={classNames(
                       amount === p && !customAmount
-                        ? "bg-gradient-to-r from-sky-500 to-indigo-500 text-white shadow-md"
+                        ? "bg-gradient-to-r from-sky-500 to-indigo-500 text-white shadow-lg"
                         : "bg-gray-50 text-gray-700 hover:bg-gray-100 border border-gray-300",
                       "w-full rounded-xl px-4 py-5 text-sm font-semibold transition-all"
                     )}
@@ -346,7 +346,7 @@ export default function DonasiPageClient() {
                 whileTap={{ scale: 0.98 }}
                 onClick={handleGenerate}
                 disabled={loading || !finalAmount}
-                className="mt-10 inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-sky-500 to-indigo-500 px-6 py-4 text-sm font-semibold text-white shadow-md transition hover:opacity-90 disabled:opacity-60"
+                className="mt-10 inline-flex w-full items-center justify-center rounded-xl bg-gradient-to-r from-sky-500 to-indigo-500 px-6 py-4 text-sm font-semibold text-white shadow-lg transition hover:opacity-90 disabled:opacity-60"
               >
                 {loading ? "Membuat QR..." : "Buat QRIS Sekarang"}
               </motion.button>
@@ -366,7 +366,7 @@ export default function DonasiPageClient() {
               status={status}
             />
 
-            <div className="flex items-center justify-between bg-gray-50 rounded-2xl px-6 py-4 border border-gray-200">
+            <div className="flex items-center justify-between bg-white/80 backdrop-blur-sm rounded-2xl px-6 py-4 border border-gray-200 shadow-sm">
               <div className="text-sm text-gray-700">
                 Status:{" "}
                 <span className={classNames(
